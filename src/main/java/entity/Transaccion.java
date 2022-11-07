@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.example.demo.Empleados;
-import com.example.demo.Empresa;
 
 public class Transaccion {
 
@@ -27,7 +25,7 @@ public class Transaccion {
 	private int saldo_final;
 	@ManyToOne
 	@JoinColumn(name="cuenta_id")
-	private Cuenta cuenta;
+	private cuenta cuentas;
 	
 	
 	

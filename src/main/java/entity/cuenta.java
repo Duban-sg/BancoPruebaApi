@@ -1,5 +1,5 @@
 package entity;
 
-public class cuenta {
+public class Cuenta {
 
 }

@@ -25,7 +25,7 @@ public class Transaccion {
 	private int saldo_final;
 	@ManyToOne
 	@JoinColumn(name="cuenta_id")
-	private cuenta cuentas;
+	private Cuenta cuenta;
 	
 	
 	

@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.example.demo.entity.Cuenta;
-
 
 public class Transaccion {
 	

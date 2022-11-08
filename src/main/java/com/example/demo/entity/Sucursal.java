@@ -1,4 +1,4 @@
-package entity;
+package com.example.demo.entity;
 
 import java.util.List;
 
@@ -28,11 +28,37 @@ public class Sucursal {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 	@Column(nullable=false,unique=false,length=100)
 	private String nombreSucursal;
 	private String direccion;
 	@ManyToMany(mappedBy="sucursal")
 	private List<Cliente>cliente;
+	private Integer id;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getNombreSucursal() {
+		return nombreSucursal;
+	}
+	public void setNombreSucursal(String nombreSucursal) {
+		this.nombreSucursal = nombreSucursal;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public List<Cliente> getCliente() {
+		return cliente;
+	}
+	public void setCliente(List<Cliente> cliente) {
+		this.cliente = cliente;
+	}
+
 	
 }

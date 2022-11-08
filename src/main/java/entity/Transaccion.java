@@ -24,7 +24,6 @@ public class Transaccion {
 	private char TipoDeTransaccion;
 	private int valor;
 	private int saldo_actual;
-	private int saldo_final;
 	@ManyToOne
 	@JoinColumn(name="cuenta_id")
 	private Cuenta cuenta;

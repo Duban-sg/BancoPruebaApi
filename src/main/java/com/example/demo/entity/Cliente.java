@@ -38,6 +38,8 @@ public class Cliente {
 	private String clave;
 	@OneToMany(mappedBy="cliente")
 	private List<Cuenta>cuentas;
-	@ManyToMany(mappedBy = "cliente")
-    private List<Sucursal> sucursales;
+
+	@ManyToMany(mappedBy="clientes")
+	private List<Sucursal>Sucursales;
+
 	}

@@ -1,16 +1,18 @@
-package entity;
+package com.example.demo.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.example.demo.entity.Cliente;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,8 +33,13 @@ public class Sucursal {
 	@Column(nullable=false,unique=false,length=100)
 	private String nombreSucursal;
 	private String direccion;
-	@ManyToMany(mappedBy="sucursal")
-	private List<Cliente>cliente;
+	@JoinTable(
+	        name = "rel_clientes_sucursales",
+	        joinColumns = @JoinColumn (name = "FK_clientes", nullable = false),
+	        inverseJoinColumns = @JoinColumn(name="FK_sucursales", nullable = false)
+	    )
+	    @ManyToMany(cascade = CascadeType.ALL)
+	    private List<Cliente> cliente;
 	private Integer id;
 	
 	public Integer getId() {

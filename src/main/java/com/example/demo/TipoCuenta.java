@@ -1,4 +1,4 @@
-package entity;
+package com.example.demo;
 
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,6 +18,7 @@ public class TipoCuenta {
 	private int Id;
 	@NonNull
 	private String nombre;
+	
 	private Double interes;
 
 }

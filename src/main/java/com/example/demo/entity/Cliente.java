@@ -1,11 +1,4 @@
-<<<<<<<< HEAD:src/main/java/com/example/demo/Cliente.java
-package com.example.demo;
-========
 package com.example.demo.entity;
->>>>>>>> 0894bff58c7037118dde439759772767be48fd0b:src/main/java/com/example/demo/entity/Cliente.java
-
-
-
 import java.util.List;
 
 import javax.persistence.Entity;

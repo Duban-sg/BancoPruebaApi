@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package entity;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.example.demo.Cliente;
+import com.example.demo.entity.Cliente;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

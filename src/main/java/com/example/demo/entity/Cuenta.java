@@ -4,14 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-
+@Setter
+@Getter
 @AllArgsConstructor
-@Table(name="Cuenta")
+@Table(name="cuenta")
 
 public class Cuenta {
 	
@@ -20,40 +25,10 @@ public class Cuenta {
 	private Integer id;
 	private String numero;
 	private String Tipo_cuenta;
-	private Cliente Cliente;
+	@ManyToOne
+	@JoinColumn(name="cliente_id")
+	private Cliente cliente;
 	private Number saldo;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getNumero() {
-		return numero;
-	}
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-	public String getTipo_cuenta() {
-		return Tipo_cuenta;
-	}
-	public void setTipo_cuenta(String tipo_cuenta) {
-		Tipo_cuenta = tipo_cuenta;
-	}
-	public Cliente getCliente() {
-		return Cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		Cliente = cliente;
-	}
-	public Number getSaldo() {
-		return saldo;
-	}
-	public void setSaldo(Number saldo) {
-		this.saldo = saldo;
-	}
 
-	
-	
 }

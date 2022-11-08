@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.example.demo.Empleados;
-import com.example.demo.Empresa;
 
 public class Transaccion {
 

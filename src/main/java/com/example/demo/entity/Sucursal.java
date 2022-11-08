@@ -8,10 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,9 +35,11 @@ public class Sucursal {
 	@Column(nullable = false, unique = false, length = 100)
 	private String nombreSucursal;
 	private String direccion;
+
 	@JoinTable(name = "sucursal_cliente", joinColumns = @JoinColumn(name = "FK_SUCURSAL", nullable = false), inverseJoinColumns = @JoinColumn(name = "FK_CLIENTE", nullable = false))
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Cliente> clientes;
+
 
 	public Integer getId() {
 		return id;

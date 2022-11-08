@@ -22,7 +22,6 @@ public class Transaccion {
 	private char TipoDeTransaccion;
 	private int valor;
 	private int saldo_actual;
-	private int saldo_final;
 	@ManyToOne
 	@JoinColumn(name="cuenta_id")
 	private Cuenta cuenta;
@@ -57,19 +56,12 @@ public class Transaccion {
 	public void setSaldo_actual(int saldo_actual) {
 		this.saldo_actual = saldo_actual;
 	}
-	public int getSaldo_final() {
-		return saldo_final;
-	}
-	public void setSaldo_final(int saldo_final) {
-		this.saldo_final = saldo_final;
-	}
 	public Cuenta getCuenta() {
 		return cuenta;
 	}
 	public void setCuenta(Cuenta cuenta) {
 		this.cuenta = cuenta;
 	}
-
 	
 	
 	

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.*;
 
 @Data
+@Getter
+@Setter
 @Entity
 @AllArgsConstructor
 @Table(name="TipoCuenta")

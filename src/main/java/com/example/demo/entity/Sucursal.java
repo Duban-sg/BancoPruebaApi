@@ -29,13 +29,13 @@ public class Sucursal {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	@Column(nullable = false, unique = false, length = 100)
 	private String nombreSucursal;
 	private String direccion;
 	@JoinTable(name = "sucursal_cliente", joinColumns = @JoinColumn(name = "FK_SUCURSAL", nullable = false), inverseJoinColumns = @JoinColumn(name = "FK_CLIENTE", nullable = false))
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Cliente> clientes;
-	private Integer id;
 
 	public Integer getId() {
 		return id;

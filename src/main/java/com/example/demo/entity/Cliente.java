@@ -1,10 +1,13 @@
 package com.example.demo.entity;
+<<<<<<< HEAD
 
 
 
 
 
 import java.io.Serializable;
+=======
+>>>>>>> dev
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -43,8 +46,16 @@ public class Cliente implements Serializable{
 	@NonNull
 	private String clave;
 	@OneToMany(mappedBy="cliente")
+<<<<<<< HEAD
 	private List<Cuenta>lis_cuentas;
 	
 	@ManyToMany(mappedBy = "clientes")
     private List<Sucursal> sucursales;
+=======
+	private List<Cuenta>cuentas;
+
+	@ManyToMany(mappedBy="clientes")
+	private List<Sucursal>Sucursales;
+
+>>>>>>> dev
 	}

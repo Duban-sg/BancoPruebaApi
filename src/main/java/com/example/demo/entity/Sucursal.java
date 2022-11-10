@@ -8,11 +8,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.JoinColumn;
+=======
+
+>>>>>>> dev
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,13 +32,14 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="sucursal")
+@Table(name = "sucursal")
 
 
 public class Sucursal {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
 	private Long id;
 	@Column(nullable=false,unique=false,length=100)
 	private String nombreSucursal;
@@ -45,6 +55,48 @@ public class Sucursal {
     private List<Cliente> clientes;
 	
 	
+=======
+	private Integer id;
+	@Column(nullable = false, unique = false, length = 100)
+	private String nombreSucursal;
+	private String direccion;
 
-	
+	@JoinTable(name = "sucursal_cliente", joinColumns = @JoinColumn(name = "FK_SUCURSAL", nullable = false), inverseJoinColumns = @JoinColumn(name = "FK_CLIENTE", nullable = false))
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Cliente> clientes;
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNombreSucursal() {
+		return nombreSucursal;
+	}
+
+	public void setNombreSucursal(String nombreSucursal) {
+		this.nombreSucursal = nombreSucursal;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public List<Cliente> getCliente() {
+		return clientes;
+	}
+
+	public void setCliente(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+>>>>>>> dev
+
 }

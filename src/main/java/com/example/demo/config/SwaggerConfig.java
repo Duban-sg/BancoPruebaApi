@@ -1,4 +1,4 @@
-package config;
+package com.example.demo.config;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,16 +26,6 @@ public class SwaggerConfig {
           .build();                                           
     }
     
-    private ApiInfo getApiInfo() {
-		return new ApiInfo(
-				"Order Service API",
-				"Order Service API Description",
-				"1.0",
-				"http://codmind.com/terms",
-				new Contact("Codmind", "https://codmind.com", "apis@codmind.com"),
-				"LICENSE",
-				"LICENSE URL",
-				Collections.emptyList()
-				);
-	}
+   
+	
 }

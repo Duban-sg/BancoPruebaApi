@@ -1,17 +1,17 @@
-<<<<<<<< HEAD:src/main/java/com/example/demo/Cliente.java
-package com.example.demo;
-========
 package com.example.demo.entity;
->>>>>>>> 0894bff58c7037118dde439759772767be48fd0b:src/main/java/com/example/demo/entity/Cliente.java
 
 
 
+
+
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,12 +24,12 @@ import lombok.NonNull;
 @AllArgsConstructor
 @Table(name="cliente")
 
-public class Cliente {
+public class Cliente implements Serializable{
 	
 	@Id
 	@NonNull
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	@NonNull
 	private String documento;
 	@NonNull
@@ -43,5 +43,8 @@ public class Cliente {
 	@NonNull
 	private String clave;
 	@OneToMany(mappedBy="cliente")
-	private List<Cuenta>cuentas;
+	private List<Cuenta>lis_cuentas;
+	
+	@ManyToMany(mappedBy = "clientes")
+    private List<Sucursal> sucursales;
 	}

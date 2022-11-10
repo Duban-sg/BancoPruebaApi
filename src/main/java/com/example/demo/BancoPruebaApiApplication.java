@@ -2,8 +2,10 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import entity.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+
+@EnableWebMvc
 @SpringBootApplication
 public class BancoPruebaApiApplication {
 

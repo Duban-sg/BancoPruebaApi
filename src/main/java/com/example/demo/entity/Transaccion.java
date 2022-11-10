@@ -12,20 +12,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
+
+
 @Table(name="transaccion")
 public class Transaccion {
 	
@@ -33,18 +33,18 @@ public class Transaccion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(nullable=false,unique=false,length=100)
-	@Temporal(TemporalType.DATE)
+	
 	private Date fecha;
 	private char TipoDeTransaccion;
 	private int valor;
 	private int saldo_actual;
 	@ManyToOne
+	@JoinColumn(name="cuenta_trans_id")
+	private Cuenta cuenta_trans;
+	@ManyToOne
 	@JoinColumn(name="cuenta_id")
 	private Cuenta cuenta;
-	
-	@ManyToOne
-	@JoinColumn(name="cuenta_transac_id")
-	private Cuenta cuenta_trans;
+
 
 
 	

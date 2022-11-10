@@ -20,8 +20,9 @@ public class TipoCuenta {
 	private Long Id;
 	@NonNull
 	private String nombre;
+
+	
 	private Double interes;
-	@OneToMany(mappedBy = "tipoCuenta")
-    private List<Cuenta> cuentas ;
+
 
 }

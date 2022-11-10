@@ -1,10 +1,5 @@
 package com.example.demo.entity;
 
-
-
-
-
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -24,7 +19,7 @@ import lombok.NonNull;
 @AllArgsConstructor
 @Table(name="cliente")
 
-public class Cliente implements Serializable{
+public class Cliente {
 	
 	@Id
 	@NonNull
@@ -43,8 +38,10 @@ public class Cliente implements Serializable{
 	@NonNull
 	private String clave;
 	@OneToMany(mappedBy="cliente")
-	private List<Cuenta>lis_cuentas;
-	
-	@ManyToMany(mappedBy = "clientes")
-    private List<Sucursal> sucursales;
+
+	private List<Cuenta>cuentas;
+
+	@ManyToMany(mappedBy="clientes")
+	private List<Sucursal>Sucursales;
+
 	}

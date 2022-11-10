@@ -32,7 +32,7 @@ public class ClienteRestController {
 
 	
 	
-	@GetMapping("/cliente")
+	@GetMapping("/clientes")
 	public List<Cliente> index(){
 		return clienteService.findAll();
 		
@@ -44,7 +44,7 @@ public class ClienteRestController {
 	}
 	
 	//para crear clientes
-	@PostMapping("/clientes")
+	@PostMapping("/cliente")
 	@ResponseStatus(HttpStatus.OK)
 	public Cliente create (@RequestBody Cliente cliente) {
 		//cliente.setCreateAt(new Date());

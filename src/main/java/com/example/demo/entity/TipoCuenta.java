@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.*;
@@ -20,5 +22,8 @@ public class TipoCuenta {
 	private String nombre;
 	
 	private Double interes;
+	
+	@OneToMany(mappedBy="tipoCuenta")
+	private List<Cuenta> cuentas;
 
 }

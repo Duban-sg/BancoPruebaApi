@@ -25,10 +25,12 @@ public class Cuenta {
 	private Integer id;
 	private String numero;
 	private String Tipo_cuenta;
+	private Number saldo;
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
 	private Cliente cliente;
-	private Number saldo;
-	
+	@ManyToOne
+	@JoinColumn(name="tipo_cuenta_id")
+	private TipoCuenta tipoCuenta;
 
 }

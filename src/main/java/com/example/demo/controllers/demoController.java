@@ -10,7 +10,7 @@ public class demoController {
 	public demoController() {}
 	
 	@GetMapping(value = "users")
-	public String demo(){
+	public String demo(String hola){
 		return "Hello world"; 
 	}
 
